@@ -25,6 +25,14 @@ copyButtons.forEach(button => {
     button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
         const textElement = document.getElementById(targetId);
+
+        textElement.textContent = "Copied!";
+        textElement.classList.add('copied-flash'); // button flashes
+
+        setTimeout(() => {
+        textElement.textContent = originalText;
+        textElement.classList.remove('copied-flash'); // flash stops after 1500ms
+}, 1500);
         
         // 1. Save the original password text so we can restore it later
         const originalText = textElement.textContent;
