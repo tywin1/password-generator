@@ -25,31 +25,26 @@ copyButtons.forEach(button => {
     button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
         const textElement = document.getElementById(targetId);
-
-        textElement.textContent = "Copied!";
-        textElement.classList.add('copied-flash'); // button flashes
-
-        setTimeout(() => {
-        textElement.textContent = originalText;
-        textElement.classList.remove('copied-flash'); // flash stops after 1500ms
-}, 1500);
         
-        // 1. Save the original password text so we can restore it later
+        // save the original text so it can revert back
         const originalText = textElement.textContent;
 
-        // 2. Prevent double-clicking bugs if it's already showing "Copied!"
+        // stop multiple copies from messing things up
         if (originalText === "Copied!") return;
 
-        // 3. Copy to the clipboard
+        // copy to clipboard
         navigator.clipboard.writeText(originalText)
             .then(() => {
-                // 4. Swap the text to "Copied!"
-                textElement.textContent = "Copied!";
-                
-                // 5. Wait 1.5 seconds (1500ms), then change it back
-                setTimeout(() => {
-                    textElement.textContent = originalText;
-                }, 1500);
+
+        // swap password to Copied! with background flash
+        textElement.textContent = "Copied!";
+        textElement.classList.add('copied-flash');
+
+        // revert back to original text after 1500ms
+        setTimeout(() => {
+        textElement.textContent = originalText;
+        textElement.classList.remove('copied-flash');
+}, 1500);
             })
             .catch(err => {
                 console.error("Failed to copy text: ", err);
