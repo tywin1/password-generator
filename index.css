@@ -1,0 +1,102 @@
+.pw-container {
+    width: 800px;
+    height: 600px;
+    align-items: center;
+    vertical-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+.pw-content {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+body {
+    font-family: "Karla", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    background-color: #1F2937;
+}
+#generate-text {
+    margin-bottom: 0px;
+    font-size: 40px;
+    color: white;
+}
+#random-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    color: #4ADF86;
+}
+#never-text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #D3D3D3;
+}
+.pw-button {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #10B981;
+    color: white;
+    border: 1px solid black;
+    font-size: 18px;
+}
+.pw-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 20px;
+}
+.pw-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.pw-text {
+    width: 200px;
+    color: #10B981;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #273549;
+    padding: 10px 10px;
+    line-height: 24px;
+    min-height: 24px;
+}
+.divider-line {
+    border: none;
+    margin-top: 20px;
+    background-color: #273549;
+    height: 2px;
+}
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+.icon-container img {
+    width: 30px;
+    height: 30px;
+    mix-blend-mode: multiply;
+}
+.pw-text {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.pw-text.copied-flash {
+    background-color: #10B981 !important;
+    color: #fff !important;
+}
